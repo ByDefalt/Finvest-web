@@ -6,6 +6,12 @@
     // Extra safety for array and object lookups, but may have false positives.
     "noUncheckedIndexedAccess": true,
 
+    // Autorise les fichiers .js dans le projet TS
+    "allowJs": true,
+
+    // Type-check les fichiers .js (via inférence + JSDoc)
+    "checkJs": true,
+
     // Path mapping for cleaner imports.
     "paths": {
       "@/*": ["./src/*"]
