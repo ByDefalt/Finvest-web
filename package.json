@@ -13,6 +13,7 @@
     "generate:api:watch": "orval --watch"
   },
   "dependencies": {
+    "awilix": "^13.0.5",
     "axios": "^1.20.0",
     "pinia": "^4.0.3",
     "pinia-plugin-persistedstate": "^4.7.1",

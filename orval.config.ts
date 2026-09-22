@@ -2,24 +2,39 @@
 import { defineConfig } from 'orval'
 import { config } from 'dotenv'
 
-config() // charge le .env dans process.env
+config()
+
+const output = (module: string) => ({
+    mode: 'tags-split' as const,
+    target: `./src/modules/${module}/infrastructure/generated/api`,
+    schemas: `./src/modules/${module}/infrastructure/generated/models`,
+    client: 'axios' as const,
+    override: {
+        mutator: {
+            path: './src/api/httpClient.ts',
+            name: 'customInstance',
+        },
+    },
+})
 
 export default defineConfig({
-    api: {
+    auth: {
         input: {
             target: `${process.env.VITE_API_URL}/v3/api-docs`,
-        },
-        output: {
-            mode: 'tags-split',
-            target: './src/generated/api',
-            schemas: './src/generated/models',
-            client: 'axios',
-            override: {
-                mutator: {
-                    path: './src/api/httpClient.ts',
-                    name: 'customInstance',
-                },
+            filters: {
+                tags: ['auth'],
             },
         },
+        output: output('auth'),
+    },
+
+    dashboard: {
+        input: {
+            target: `${process.env.VITE_API_URL}/v3/api-docs`,
+            filters: {
+                tags: ['dashboard'],
+            },
+        },
+        output: output('dashboard'),
     },
 })
