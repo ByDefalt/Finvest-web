@@ -4,6 +4,7 @@ import type {RegisterUseCase} from "@/modules/auth/application/use-cases/Registe
 export class RegisterViewModel {
 
     state = reactive({
+        name: "",
         email: "",
         password: "",
         isLoading: false,
@@ -26,6 +27,7 @@ export class RegisterViewModel {
 
         try {
             await this.registerUseCase.execute({
+                name: this.state.name,
                 email: this.state.email,
                 password: this.state.password,
             });

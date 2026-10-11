@@ -7,5 +7,17 @@
 
 export * from './accountDashboardResponse';
 export * from './accountDashboardResponseAccountStatus';
+export * from './accountDetailsDto';
+export * from './accountDto';
+export * from './accountDtoAccountStatus';
 export * from './accountOwnerDashboardResponse';
+export * from './accountWithDetailsDto';
+export * from './assuranceVieDto';
+export * from './bankDto';
+export * from './compteCourantDto';
+export * from './compteTitreDto';
 export * from './dashboardResponse';
+export * from './livretDto';
+export * from './peaDto';
+export * from './peeDto';
+export * from './perDto';

@@ -4,11 +4,11 @@
  * OpenAPI definition
  * OpenAPI spec version: v0
  */
-import type { AccountDashboardResponse } from './accountDashboardResponse';
+import type {AccountDashboardResponse} from './accountDashboardResponse';
 
 export interface DashboardResponse {
-  totalAccounts: number;
-  totalBalance: number;
-  totalActiveAccounts: number;
-  accounts: AccountDashboardResponse[];
+    totalAccounts: number;
+    totalBalance: number;
+    totalActiveAccounts: number;
+    accounts: AccountDashboardResponse[];
 }

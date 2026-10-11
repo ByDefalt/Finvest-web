@@ -4,22 +4,19 @@
  * OpenAPI definition
  * OpenAPI spec version: v0
  */
-import type {
-  DashboardResponse
-} from '../../models';
+import type {AccountWithDetailsDto} from '../../models';
 
-import { customInstance } from '../../../../../../api/httpClient';
+import {customInstance} from '../../../../../../api/httpClient';
 
 
-
-  export const getDashboard = () => {
-const getDashboard = (
-
- ) => {
-      return customInstance<DashboardResponse>(
-      {url: `/dashboard/`, method: 'GET'
-    },
-      );
+export const getDashboard = () => {
+    const getDashboard = () => {
+        return customInstance<AccountWithDetailsDto[]>(
+            {
+                url: `/dashboard/`, method: 'GET'
+            },
+        );
     }
-  return {getDashboard}};
+    return {getDashboard}
+};
 export type GetDashboardResult = NonNullable<Awaited<ReturnType<ReturnType<typeof getDashboard>['getDashboard']>>>

@@ -9,6 +9,6 @@ export type AccountDashboardResponseAccountStatus = typeof AccountDashboardRespo
 
 
 export const AccountDashboardResponseAccountStatus = {
-  ACTIVE: 'ACTIVE',
-  CLOSED: 'CLOSED',
+    ACTIVE: 'ACTIVE',
+    CLOSED: 'CLOSED',
 } as const;

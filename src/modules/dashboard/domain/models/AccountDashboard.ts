@@ -1,7 +1,7 @@
 import type {AccountStatus} from "@/modules/dashboard/domain/models/AccountStatus.ts";
 import type {AccountOwner} from "@/modules/dashboard/domain/models/AccountOwner.ts";
 
-export interface AccountDashboard{
+export interface AccountDashboard {
     id: number;
     bankName: string;
     name: string;

@@ -1,0 +1,58 @@
+{
+  "errors": {
+    "network": "Impossible de joindre le serveur",
+    "server": "Une erreur est survenue, réessaie plus tard",
+    "unknown": "Une erreur inattendue est survenue",
+    "auth": {
+      "invalidCredentials": "Email ou mot de passe incorrect",
+      "sessionExpired": "Ta session a expiré"
+    },
+    "user": { "emailTaken": "L'email {email} est déjà utilisé" },
+    "account": { "notFound": "Compte introuvable" },
+    "validation": {
+      "NotBlank": "Champ obligatoire",
+      "Email": "Format invalide",
+      "Size": "Longueur invalide"
+    }
+  },
+  "common": {
+    "loading": "Chargement...",
+    "close": "Fermer"
+  },
+  "auth": {
+    "fields": {
+      "name": { "label": "Nom", "placeholder": "Votre nom" },
+      "email": { "label": "Email", "placeholder": "vous{'@'}exemple.com" },
+      "password": { "label": "Mot de passe", "placeholder": "••••••••" }
+    },
+    "login": {
+      "title": "Connexion",
+      "subtitle": "Connectez-vous à votre compte",
+      "submit": "Se connecter",
+      "toRegister": "Pas encore de compte ? Créer un compte"
+    },
+    "register": {
+      "title": "Créer un compte",
+      "subtitle": "Créez votre compte pour commencer",
+      "submit": "Créer un compte",
+      "toLogin": "Déjà un compte ? Se connecter"
+    }
+  },
+  "account": {
+    "create": { "title": "Nouveau compte", "submit": "Créer le compte" },
+    "types": {
+      "CURRENT": "Compte courant", "SAVINGS_BOOK": "Livret", "PEA": "PEA",
+      "SECURITIES": "Compte-titres", "LIFE_INSURANCE": "Assurance-vie", "PER": "PER", "PEE": "PEE"
+    },
+    "fields": {
+      "select": "Choisir...", "bank": "Banque", "name": "Nom du compte", "currency": "Devise",
+      "balance": "Solde", "description": "Description", "type": "Type de compte",
+      "iban": "IBAN", "bic": "BIC", "accountNumber": "Numéro de compte",
+      "overdraftLimit": "Découvert autorisé", "holderName": "Titulaire",
+      "interestRate": "Taux d'intérêt", "ceiling": "Plafond", "depositLimit": "Plafond de versements",
+      "openingDate": "Date d'ouverture", "contractNumber": "Numéro de contrat",
+      "managementType": "Type de gestion", "employer": "Employeur",
+      "owner": "Propriétaire", "share": "Part"
+    }
+  }
+}

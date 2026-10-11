@@ -1,0 +1,124 @@
+/*
+ * ds.css : couche de classes sémantiques du design system.
+ * Seul fichier (avec tailwind.css) qui connaît Tailwind pour le style.
+ * Pour changer de lib de style : réécrire uniquement ce fichier.
+ */
+
+/* ---------- Button ---------- */
+.ds-button {
+    @apply w-full h-10 rounded-md bg-primary text-primary-foreground text-sm font-medium
+    transition-colors hover:bg-primary/90
+    focus:outline-none focus:ring-2 focus:ring-ring
+    disabled:pointer-events-none disabled:opacity-50;
+}
+
+/* ---------- Input ---------- */
+.ds-input,
+.ds-select {
+    @apply w-full h-10 rounded-md border border-input bg-background px-3 py-2 text-sm
+    placeholder:text-muted-foreground
+    focus:outline-none focus:ring-2 focus:ring-ring
+    disabled:cursor-not-allowed disabled:opacity-50
+    aria-invalid:border-destructive aria-invalid:focus:ring-destructive;
+}
+
+/* ---------- Field ---------- */
+.ds-field {
+    @apply flex flex-col gap-2;
+}
+.ds-field__label {
+    @apply text-sm font-medium leading-none;
+}
+.ds-field__required {
+    @apply text-destructive;
+}
+.ds-field__error {
+    @apply text-sm text-destructive;
+}
+.ds-field__hint {
+    @apply text-sm text-muted-foreground;
+}
+
+/* ---------- Form ---------- */
+.ds-form {
+    @apply flex flex-col gap-6;
+}
+
+/* ---------- Stack ---------- */
+.ds-stack {
+    @apply flex flex-col;
+}
+.ds-stack--sm { @apply gap-2; }
+.ds-stack--md { @apply gap-4; }
+.ds-stack--lg { @apply gap-6; }
+.ds-stack--horizontal { @apply flex-row; }
+
+/* ---------- Header ---------- */
+.ds-header {
+    @apply flex flex-col gap-2;
+}
+.ds-header--start  { @apply text-left; }
+.ds-header--center { @apply text-center; }
+.ds-header__title {
+    @apply text-2xl font-semibold tracking-tight;
+}
+.ds-header__subtitle {
+    @apply text-sm text-muted-foreground;
+}
+
+/* ---------- Error message ---------- */
+.ds-error-message {
+    @apply text-sm text-destructive;
+}
+
+/* ---------- Link ---------- */
+.ds-link {
+    @apply text-primary font-medium hover:underline;
+}
+
+/* ---------- Centered page ---------- */
+.ds-page {
+    @apply min-h-screen flex items-center justify-center bg-background px-4;
+}
+.ds-page__content {
+    @apply w-full;
+}
+.ds-page__content--sm { @apply max-w-sm; }
+.ds-page__content--md { @apply max-w-md; }
+.ds-page__content--lg { @apply max-w-lg; }
+
+/* ---------- Card ---------- */
+.ds-card {
+    @apply bg-card text-card-foreground border border-border rounded-xl shadow-lg p-8;
+}
+
+/* ---------- Text ---------- */
+.ds-text--sm { @apply text-sm; }
+.ds-text--md { @apply text-base; }
+
+.ds-text--default { @apply text-inherit; }
+.ds-text--muted { @apply text-muted-foreground; }
+.ds-text--destructive { @apply text-destructive; }
+
+.ds-text--start { @apply text-left; }
+.ds-text--center { @apply text-center; }
+
+/* ---------- Toast ---------- */
+.ds-toast-container {
+    @apply fixed bottom-4 left-4 right-4 z-50 flex flex-col gap-2 pointer-events-none
+    sm:left-auto sm:w-full sm:max-w-sm;
+}
+.ds-toast {
+    @apply pointer-events-auto flex items-start gap-3 rounded-md border border-l-4
+    bg-card text-card-foreground p-4 text-sm shadow-lg;
+}
+.ds-toast--info    { @apply border-l-primary; }
+.ds-toast--success { @apply border-l-success; }
+.ds-toast--error   { @apply border-l-destructive; }
+.ds-toast__message {
+    @apply flex-1;
+}
+.ds-toast__close {
+    @apply rounded-sm leading-none text-muted-foreground hover:text-foreground
+    focus:outline-none focus:ring-2 focus:ring-ring;
+}

@@ -6,7 +6,7 @@
  */
 
 export interface AccountOwnerDashboardResponse {
-  email?: string;
-  name?: string;
-  ownershipPercentage: number;
+    email?: string;
+    name?: string;
+    ownershipPercentage: number;
 }

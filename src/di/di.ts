@@ -1,5 +1,6 @@
 import {createContainer, InjectionMode} from "awilix";
 import {ModuleDi} from "@/modules/di/ModuleDi.ts";
+import {AuthDI} from "@/auth/di.ts";
 
 export const container = createContainer({
     injectionMode: InjectionMode.CLASSIC,
@@ -11,5 +12,6 @@ export function resolve<T>(name: string): T {
 }
 
 export function ProjectDi() {
+    AuthDI();
     ModuleDi();
 }

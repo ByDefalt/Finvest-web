@@ -10,6 +10,7 @@ import type {AuthSession, Credential, User} from "@/modules/auth/domain/models";
 
 export function mapUserResponseToUser(userResponse: UserResponse): User {
     return {
+        name: "",
         email: userResponse.email
     };
 }

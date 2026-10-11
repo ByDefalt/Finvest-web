@@ -6,6 +6,7 @@ import router from "@/router";
 export class LoginViewModel {
 
     readonly state = reactive({
+        name: "",
         email: "",
         password: "",
         isLoading: false,
@@ -28,6 +29,7 @@ export class LoginViewModel {
         this.state.success = false;
 
         const credential: Credential = {
+            name: this.state.name,
             email: this.state.email,
             password: this.state.password,
         };
@@ -36,7 +38,7 @@ export class LoginViewModel {
             await this.loginUseCase.execute(credential);
 
             this.state.success = true;
-            await router.push({name: "home"});
+            await router.push({name: "dashboard"});
         } catch {
             this.state.error = "Email ou mot de passe incorrect.";
         } finally {

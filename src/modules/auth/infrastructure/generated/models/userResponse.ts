@@ -6,5 +6,5 @@
  */
 
 export interface UserResponse {
-  email: string;
+    email: string;
 }

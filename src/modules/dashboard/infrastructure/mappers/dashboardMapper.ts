@@ -31,6 +31,7 @@ export function mapAccountDashboardResponseToAccountDashboard(accountDashboardRe
     }
 }
 
+
 export function mapAccountDashboardResponseListToAccountDashboardList(accountDashboardResponseList: AccountDashboardResponse[]): AccountDashboard[] {
     return accountDashboardResponseList.map(mapAccountDashboardResponseToAccountDashboard);
 }

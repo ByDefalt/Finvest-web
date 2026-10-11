@@ -4,19 +4,21 @@
  * OpenAPI definition
  * OpenAPI spec version: v0
  */
-import type { AccountDashboardResponseAccountStatus } from './accountDashboardResponseAccountStatus';
-import type { AccountOwnerDashboardResponse } from './accountOwnerDashboardResponse';
+import type {AccountDashboardResponseAccountStatus} from './accountDashboardResponseAccountStatus';
+import type {AccountDetailsDto} from './accountDetailsDto';
+import type {AccountOwnerDashboardResponse} from './accountOwnerDashboardResponse';
 
 export interface AccountDashboardResponse {
-  id: number;
-  bankName: string;
-  name: string;
-  balance: number;
-  currency: string;
-  createdAt: string;
-  closedAt?: string;
-  accountStatus: AccountDashboardResponseAccountStatus;
-  description?: string;
-  type: string;
-  accountOwners: AccountOwnerDashboardResponse[];
+    id: number;
+    bankName: string;
+    name: string;
+    balance: number;
+    currency: string;
+    createdAt: string;
+    closedAt?: string;
+    accountStatus: AccountDashboardResponseAccountStatus;
+    description?: string;
+    type: string;
+    accountOwners: AccountOwnerDashboardResponse[];
+    accountDetails?: AccountDetailsDto;
 }

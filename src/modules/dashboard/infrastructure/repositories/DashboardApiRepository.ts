@@ -6,6 +6,7 @@ import {mapDashboardResponseToDashboardData} from "@/modules/dashboard/infrastru
 export class DashboardApiRepository implements DashboardRepository {
 
     private readonly api = getDashboard();
+
     async getDashboardData(): Promise<DashboardData> {
         const response = await this.api.getDashboard();
         return mapDashboardResponseToDashboardData(response);

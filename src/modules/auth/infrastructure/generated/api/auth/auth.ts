@@ -4,56 +4,51 @@
  * OpenAPI definition
  * OpenAPI spec version: v0
  */
-import type {
-  LoginRequest,
-  LoginResponse,
-  RegisterUserRequest,
-  UserResponse
-} from '../../models';
+import type {LoginRequest, LoginResponse, RegisterUserRequest, UserResponse} from '../../models';
 
-import { customInstance } from '../../../../../../api/httpClient';
+import {customInstance} from '../../../../../../api/httpClient';
 
 
-
-  export const getAuth = () => {
-const register = (
-    registerUserRequest: RegisterUserRequest,
- ) => {
-      return customInstance<UserResponse>(
-      {url: `/auth/register`, method: 'POST',
-      headers: {'Content-Type': 'application/json', },
-      data: registerUserRequest
-    },
-      );
+export const getAuth = () => {
+    const register = (
+        registerUserRequest: RegisterUserRequest,
+    ) => {
+        return customInstance<UserResponse>(
+            {
+                url: `/auth/register`, method: 'POST',
+                headers: {'Content-Type': 'application/json',},
+                data: registerUserRequest
+            },
+        );
     }
-  const refreshToken = (
-
- ) => {
-      return customInstance<LoginResponse>(
-      {url: `/auth/refresh`, method: 'POST'
-    },
-      );
+    const refreshAccessToken = () => {
+        return customInstance<LoginResponse>(
+            {
+                url: `/auth/refresh`, method: 'POST'
+            },
+        );
     }
-  const logout = (
-
- ) => {
-      return customInstance<void>(
-      {url: `/auth/logout`, method: 'POST'
-    },
-      );
+    const logout = () => {
+        return customInstance<void>(
+            {
+                url: `/auth/logout`, method: 'POST'
+            },
+        );
     }
-  const login = (
-    loginRequest: LoginRequest,
- ) => {
-      return customInstance<LoginResponse>(
-      {url: `/auth/login`, method: 'POST',
-      headers: {'Content-Type': 'application/json', },
-      data: loginRequest
-    },
-      );
+    const login = (
+        loginRequest: LoginRequest,
+    ) => {
+        return customInstance<LoginResponse>(
+            {
+                url: `/auth/login`, method: 'POST',
+                headers: {'Content-Type': 'application/json',},
+                data: loginRequest
+            },
+        );
     }
-  return {register,refreshToken,logout,login}};
+    return {register, refreshAccessToken, logout, login}
+};
 export type RegisterResult = NonNullable<Awaited<ReturnType<ReturnType<typeof getAuth>['register']>>>
-export type RefreshTokenResult = NonNullable<Awaited<ReturnType<ReturnType<typeof getAuth>['refreshToken']>>>
+export type RefreshAccessTokenResult = NonNullable<Awaited<ReturnType<ReturnType<typeof getAuth>['refreshAccessToken']>>>
 export type LogoutResult = NonNullable<Awaited<ReturnType<ReturnType<typeof getAuth>['logout']>>>
 export type LoginResult = NonNullable<Awaited<ReturnType<ReturnType<typeof getAuth>['login']>>>
