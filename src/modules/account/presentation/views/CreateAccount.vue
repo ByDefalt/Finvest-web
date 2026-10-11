@@ -216,10 +216,8 @@ function submit() {
 
           <!-- Propriétaires -->
           <template v-for="(owner, index) in state.owners" :key="index">
-            <CreateOwner :owner="owner" :index="index" @remove-owner="removeOwner"/>
+            <CreateOwner :owner="owner" :index="index" :total-owners="state.owners.length" @remove-owner="removeOwner" @add-owner="addOwner"/>
           </template>
-
-          <DsPrimaryButton :text="$t('account.fields.addOwner')" type="button" @click="addOwner"/>
         </DsStack>
 
         <DsPrimaryButton :text="$t('account.create.submit')" type="submit"/>
