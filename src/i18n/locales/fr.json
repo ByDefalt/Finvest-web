@@ -52,7 +52,10 @@
       "interestRate": "Taux d'intérêt", "ceiling": "Plafond", "depositLimit": "Plafond de versements",
       "openingDate": "Date d'ouverture", "contractNumber": "Numéro de contrat",
       "managementType": "Type de gestion", "employer": "Employeur",
-      "owner": "Propriétaire", "share": "Part"
-    }
+      "owner": "Propriétaire", "share": "Part",
+      "ownerName": "Nom", "ownerShare": "Part (%)",
+      "addOwner": "Ajouter un propriétaire", "removeOwner": "Supprimer"
+    },
+    "owners": { "title": "Propriétaires" }
   }
 }

@@ -5,9 +5,6 @@ import DsField from "@/design-system/components/DsField.vue";
 import DsFieldAction from "@/design-system/components/DsFieldAction.vue";
 import DsStack from "@/design-system/components/DsStack.vue";
 import { ref } from 'vue';
-import DsSecondaryButton from "@/design-system/components/DsSecondaryButton.vue";
-import DsCard from "@/design-system/components/DsCard.vue";
-import DsCenteredPage from "@/design-system/components/DsCenteredPage.vue";
 
 const props = defineProps<{
   owner: {
@@ -18,7 +15,7 @@ const props = defineProps<{
   totalOwners: number;
 }>();
 
-const emit = defineEmits(['remove-owner', 'add-owner']);
+const emit = defineEmits<{ (e: 'remove-owner', index: number): void }>();
 const isRemoving = ref(false);
 
 async function handleRemove() {
@@ -35,7 +32,6 @@ async function handleRemove() {
 </script>
 
 <template>
-    <DsCard>
   <DsStack direction="horizontal" gap="sm">
     <DsField :label="$t('account.fields.ownerName')" required>
       <DsInput v-model="owner.name" type="text"/>
@@ -52,11 +48,4 @@ async function handleRemove() {
       />
     </DsFieldAction>
   </DsStack>
-  <DsSecondaryButton
-      v-if="props.index === props.totalOwners - 1"
-      :text="$t('account.fields.addOwner')"
-      type="button"
-      @click="emit('add-owner')"
-  />
-      </DsCard>
 </template>

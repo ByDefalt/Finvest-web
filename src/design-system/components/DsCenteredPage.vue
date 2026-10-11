@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 withDefaults(defineProps<{
-  size?: 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'auto'
+  size?: 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'wide' | 'auto'
 }>(), { size: 'md' })
 </script>
 

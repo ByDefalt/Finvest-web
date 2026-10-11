@@ -72,6 +72,14 @@
 .ds-stack--horizontal > * { @apply min-w-0; }
 .ds-stack--horizontal > .ds-field { @apply flex-1; }
 
+/* ---------- Columns ---------- */
+.ds-columns {
+    @apply grid grid-cols-1 items-start lg:grid-cols-2;
+}
+.ds-columns--sm { @apply gap-2; }
+.ds-columns--md { @apply gap-4; }
+.ds-columns--lg { @apply gap-6; }
+
 /* ---------- Header ---------- */
 .ds-header {
     @apply flex flex-col gap-2;
@@ -107,6 +115,8 @@
 .ds-page__content--lg { @apply max-w-lg; }
 .ds-page__content--xl { @apply max-w-xl; }
 .ds-page__content--xxl { @apply max-w-2xl; }
+/* wide : mises en page en colonnes (ex. deux cartes côte à côte) */
+.ds-page__content--wide { @apply max-w-5xl; }
 /* auto : s'adapte au contenu, borné à la largeur disponible */
 .ds-page__content--auto { @apply w-fit max-w-full; }
 
