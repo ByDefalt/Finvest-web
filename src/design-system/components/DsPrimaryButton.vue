@@ -11,7 +11,7 @@ defineProps<{
   <button
       :disabled="disabled || loading"
       :type="type"
-      class="ds-button">
+      class="ds-button ds-button--primary">
     {{ loading ? $t('common.loading') : text }}
   </button>
 </template>

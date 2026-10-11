@@ -119,9 +119,9 @@ function submit() {
 </script>
 
 <template>
+  <DsForm @submit="submit">
   <DsCenteredPage size="lg">
     <DsCard>
-      <DsForm @submit="submit">
         <DsHeader :title="$t('account.create.title')"/>
 
         <DsStack gap="md">
@@ -214,14 +214,17 @@ function submit() {
             </DsField>
           </template>
 
-          <!-- Propriétaires -->
-          <template v-for="(owner, index) in state.owners" :key="index">
-            <CreateOwner :owner="owner" :index="index" :total-owners="state.owners.length" @remove-owner="removeOwner" @add-owner="addOwner"/>
-          </template>
+
         </DsStack>
 
         <DsPrimaryButton :text="$t('account.create.submit')" type="submit"/>
-      </DsForm>
     </DsCard>
+    <!-- Propriétaires -->
+    <template v-for="(owner, index) in state.owners" :key="index">
+      <CreateOwner :owner="owner" :index="index" :total-owners="state.owners.length" @remove-owner="removeOwner" @add-owner="addOwner"/>
+    </template>
   </DsCenteredPage>
+
+
+  </DsForm>
 </template>

@@ -6,10 +6,16 @@
 
 /* ---------- Button ---------- */
 .ds-button {
-    @apply w-full h-10 rounded-md bg-primary text-primary-foreground text-sm font-medium
-    transition-colors hover:bg-primary/90
+    @apply w-full h-10 rounded-md text-sm font-medium
+    transition-colors
     focus:outline-none focus:ring-2 focus:ring-ring
     disabled:pointer-events-none disabled:opacity-50;
+}
+.ds-button--primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90;
+}
+.ds-button--secondary {
+    @apply border border-border bg-card text-card-foreground hover:bg-muted;
 }
 
 /* ---------- Input ---------- */
@@ -23,7 +29,8 @@
 }
 
 /* ---------- Field ---------- */
-.ds-field {
+.ds-field,
+.ds-field-action {
     @apply flex flex-col gap-2;
 }
 .ds-field__label {
@@ -39,6 +46,14 @@
     @apply text-sm text-muted-foreground;
 }
 
+/* ---------- Field action (action alignée sur le contrôle d'un DsField voisin) ---------- */
+.ds-field-action {
+    @apply shrink-0;
+}
+.ds-field-action__spacer {
+    @apply invisible;
+}
+
 /* ---------- Form ---------- */
 .ds-form {
     @apply flex flex-col gap-6;
@@ -52,6 +67,10 @@
 .ds-stack--md { @apply gap-4; }
 .ds-stack--lg { @apply gap-6; }
 .ds-stack--horizontal { @apply flex-row; }
+/* Dans une rangée : les enfants peuvent rétrécir (sinon la largeur intrinsèque des inputs
+   fait déborder le conteneur) et les champs se partagent la place restante. */
+.ds-stack--horizontal > * { @apply min-w-0; }
+.ds-stack--horizontal > .ds-field { @apply flex-1; }
 
 /* ---------- Header ---------- */
 .ds-header {
@@ -86,6 +105,10 @@
 .ds-page__content--sm { @apply max-w-sm; }
 .ds-page__content--md { @apply max-w-md; }
 .ds-page__content--lg { @apply max-w-lg; }
+.ds-page__content--xl { @apply max-w-xl; }
+.ds-page__content--xxl { @apply max-w-2xl; }
+/* auto : s'adapte au contenu, borné à la largeur disponible */
+.ds-page__content--auto { @apply w-fit max-w-full; }
 
 /* ---------- Card ---------- */
 .ds-card {

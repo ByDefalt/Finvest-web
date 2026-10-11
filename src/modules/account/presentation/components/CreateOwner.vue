@@ -2,8 +2,12 @@
 import DsPrimaryButton from "@/design-system/components/DsPrimaryButton.vue";
 import DsInput from "@/design-system/components/DsInput.vue";
 import DsField from "@/design-system/components/DsField.vue";
+import DsFieldAction from "@/design-system/components/DsFieldAction.vue";
 import DsStack from "@/design-system/components/DsStack.vue";
 import { ref } from 'vue';
+import DsSecondaryButton from "@/design-system/components/DsSecondaryButton.vue";
+import DsCard from "@/design-system/components/DsCard.vue";
+import DsCenteredPage from "@/design-system/components/DsCenteredPage.vue";
 
 const props = defineProps<{
   owner: {
@@ -20,7 +24,7 @@ const isRemoving = ref(false);
 async function handleRemove() {
   // Prevent rapid clicks
   if (isRemoving.value || props.totalOwners <= 1) return;
-  
+
   isRemoving.value = true;
   try {
     emit('remove-owner', props.index);
@@ -31,6 +35,7 @@ async function handleRemove() {
 </script>
 
 <template>
+    <DsCard>
   <DsStack direction="horizontal" gap="sm">
     <DsField :label="$t('account.fields.ownerName')" required>
       <DsInput v-model="owner.name" type="text"/>
@@ -38,17 +43,20 @@ async function handleRemove() {
     <DsField :label="$t('account.fields.ownerShare')" required>
       <DsInput v-model="owner.share" inputmode="decimal" type="text"/>
     </DsField>
-    <DsPrimaryButton
-        :text="$t('account.fields.removeOwner')"
-        type="button"
-        @click="handleRemove"
-        :disabled="props.totalOwners <= 1 || isRemoving"
-    />
+    <DsFieldAction>
+      <DsPrimaryButton
+          :text="$t('account.fields.removeOwner')"
+          type="button"
+          @click="handleRemove"
+          :disabled="props.totalOwners <= 1 || isRemoving"
+      />
+    </DsFieldAction>
   </DsStack>
-  <DsPrimaryButton
+  <DsSecondaryButton
       v-if="props.index === props.totalOwners - 1"
       :text="$t('account.fields.addOwner')"
       type="button"
       @click="emit('add-owner')"
   />
+      </DsCard>
 </template>

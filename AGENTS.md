@@ -92,7 +92,7 @@ En mode `CLASSIC`, awilix résout les dépendances **par le nom des paramètres 
 
 ### 5.1 Design System dans les views
 
-- **Les Views n'utilisent que des composants du DS (`Ds*`)** : `DsCenteredPage`, `DsCard`, `DsStack`, `DsForm`, `DsHeader`, `DsField`, `DsInput`, `DsSelect`, `DsText`, `DsLink`, `DsPrimaryButton`, `DsErrorMessage`, `DsToast`/`DsToastContainer` (+ `useToast`). Pas de `<div>`, `<p>`, `<button>`, `<h1>`… « libres » à la place d'un composant DS.
+- **Les Views n'utilisent que des composants du DS (`Ds*`)** : `DsCenteredPage` (`size` : sm, md, lg, xl, xxl, auto), `DsCard`, `DsStack`, `DsForm`, `DsHeader`, `DsField`, `DsFieldAction` (bouton aligné sur le contrôle d'une rangée de champs), `DsInput`, `DsSelect`, `DsText`, `DsLink`, `DsPrimaryButton`, `DsSecondaryButton`, `DsErrorMessage`, `DsToast`/`DsToastContainer` (+ `useToast`). Pas de `<div>`, `<p>`, `<button>`, `<h1>`… « libres » à la place d'un composant DS.
 - **Aucun CSS dans les Views** : ni `<style>`, ni `style="..."`, ni classe Tailwind utilitaire (`flex`, `p-4`, `text-muted-foreground`…), ni classe CSS ad hoc, ni `:class` qui porte du style.
 - Pas de librairie UI tierce.
 - Si un besoin visuel n'est pas couvert : **ne pas bricoler dans la View**. Créer ou étendre un composant dans `src/design-system/components/`, avec ses variantes en **props typées**, puis l'utiliser.
